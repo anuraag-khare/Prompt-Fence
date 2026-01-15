@@ -396,30 +396,43 @@ name = "prompt-fence"
 version = "0.1.0"
 source = { editable = "." }
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
+    { name = "maturin" },
     { name = "mypy" },
     { name = "pytest", version = "8.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "pytest", version = "9.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "pytest-cov" },
     { name = "ruff" },
 ]
-
-[package.dev-dependencies]
-dev = [
-    { name = "maturin" },
+lint = [
+    { name = "mypy" },
+    { name = "ruff" },
+]
+test = [
+    { name = "pytest", version = "8.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "pytest", version = "9.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "pytest-cov" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
-    { name = "pytest-cov", marker = "extra == 'dev'" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8" },
-]
 
 [package.metadata.requires-dev]
-dev = [{ name = "maturin", specifier = ">=1.11.5" }]
+dev = [
+    { name = "maturin", specifier = ">=1.11.5" },
+    { name = "mypy", specifier = ">=1.0" },
+    { name = "pytest", specifier = ">=7.0" },
+    { name = "pytest-cov" },
+    { name = "ruff", specifier = ">=0.8" },
+]
+lint = [
+    { name = "mypy", specifier = ">=1.0" },
+    { name = "ruff", specifier = ">=0.8" },
+]
+test = [
+    { name = "pytest", specifier = ">=7.0" },
+    { name = "pytest-cov" },
+]
 
 [[package]]
 name = "pygments"
