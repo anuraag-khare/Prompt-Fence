@@ -1,5 +1,12 @@
 # Prompt Fence SDK
 
+[![PyPI version](https://badge.fury.io/py/prompt-fence.svg)](https://badge.fury.io/py/prompt-fence)
+[![CI](https://github.com/anuraag-khare/prompt-fence/actions/workflows/ci.yml/badge.svg)](https://github.com/anuraag-khare/prompt-fence/actions/workflows/ci.yml)
+[![Python Versions](https://img.shields.io/pypi/pyversions/prompt-fence.svg)](https://pypi.org/project/prompt-fence/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/prompt-fence)](https://pepy.tech/project/prompt-fence)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 A Python SDK for establishing cryptographic security boundaries in LLM prompts, based on the [Prompt Fence paper](https://arxiv.org/abs/2511.19727).
 
 ## Overview
@@ -13,6 +20,16 @@ Prompt Fence provides cryptographically signed segments within LLM prompts to:
 The SDK uses Ed25519 signatures with SHA-256 hashing, implemented in Rust for performance.
 
 ## Installation
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install prompt-fence
+# or
+uv add prompt-fence
+```
 
 ### From Source (Development)
 

@@ -1,5 +1,12 @@
 # Prompt Fence
 
+[![PyPI version](https://badge.fury.io/py/prompt-fence.svg)](https://badge.fury.io/py/prompt-fence)
+[![CI](https://github.com/anuraag-khare/prompt-fence/actions/workflows/ci.yml/badge.svg)](https://github.com/anuraag-khare/prompt-fence/actions/workflows/ci.yml)
+[![Python Versions](https://img.shields.io/pypi/pyversions/prompt-fence.svg)](https://pypi.org/project/prompt-fence/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/prompt-fence)](https://pepy.tech/project/prompt-fence)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 A Python SDK (backed by Rust) for establishing cryptographic security boundaries in LLM prompts.
 
 > [!NOTE]
@@ -38,6 +45,16 @@ sdk/
 - **uv** (recommended package manager)
 
 ### Installation
+
+```bash
+# Install from PyPI
+pip install prompt-fence
+
+# Or using uv
+uv add prompt-fence
+```
+
+#### Build from Source (Development)
 
 ```bash
 # 1. Install Rust
