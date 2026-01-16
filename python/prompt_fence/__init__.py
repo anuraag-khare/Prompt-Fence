@@ -27,7 +27,6 @@ Example:
 from __future__ import annotations
 
 from .builder import (
-    DEFAULT_AWARENESS_INSTRUCTIONS,
     FencedPrompt,
     PromptBuilder,
 )
@@ -37,6 +36,25 @@ from .types import (
     FenceType,
     VerificationResult,
 )
+
+try:
+    from ._core import (
+        CryptoError,
+        FenceError,
+        get_awareness_instructions,
+        set_awareness_instructions,
+    )
+except ImportError:
+    # Core module not compiled/available
+    FenceError = None  # type: ignore
+    CryptoError = None  # type: ignore
+
+    def get_awareness_instructions() -> str:
+        raise ImportError("Rust core not available")
+
+    def set_awareness_instructions(instructions: str) -> None:
+        raise ImportError("Rust core not available")
+
 
 __version__ = "0.1.0"
 __all__ = [
@@ -48,11 +66,15 @@ __all__ = [
     # Builder
     "PromptBuilder",
     "FencedPrompt",
-    "DEFAULT_AWARENESS_INSTRUCTIONS",
     # Functions
     "generate_keypair",
     "validate",
     "validate_fence",
+    "get_awareness_instructions",
+    "set_awareness_instructions",
+    # Exceptions
+    "FenceError",
+    "CryptoError",
 ]
 
 
