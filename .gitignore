@@ -48,3 +48,9 @@ release/
 *.so
 *.pyd
 *.dylib
+
+# Documentation
+docs/
+
+# MkDocs build output
+site/

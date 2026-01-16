@@ -34,6 +34,11 @@ dev = [
 ]
 test = ["pytest>=7.0", "pytest-cov"]
 lint = ["ruff>=0.8", "mypy>=1.0"]
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.24.0",
+]
 
 
 [tool.maturin]
