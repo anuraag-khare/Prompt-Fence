@@ -134,16 +134,10 @@ def validate(prompt: str | FencedPrompt, public_key: str | None = None) -> bool:
             public_key = os.environ.get("PROMPT_FENCE_PUBLIC_KEY")
 
         if public_key is None:
-            raise ValueError(
-                "Public key must be provided or set in PROMPT_FENCE_PUBLIC_KEY"
-            )
+            raise ValueError("Public key must be provided or set in PROMPT_FENCE_PUBLIC_KEY")
 
         # Handle FencedPrompt objects automatically
-        prompt_str = (
-            prompt.to_plain_string()
-            if hasattr(prompt, "to_plain_string")
-            else str(prompt)
-        )
+        prompt_str = prompt.to_plain_string() if hasattr(prompt, "to_plain_string") else str(prompt)
 
         result: bool = verify_all_fences(prompt_str, public_key)
         return result
