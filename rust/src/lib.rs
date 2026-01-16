@@ -34,8 +34,8 @@ fn _core(py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(fence::py_set_awareness_instructions, m)?)?;
 
     // Exceptions
-    m.add("FenceError", py.get_type_bound::<FenceError>())?;
-    m.add("CryptoError", py.get_type_bound::<CryptoError>())?;
+    m.add("FenceError", py.get_type::<FenceError>())?;
+    m.add("CryptoError", py.get_type::<CryptoError>())?;
 
     Ok(())
 }
