@@ -130,16 +130,19 @@ class TestPromptBuilder:
         assert validate(prompt_str, public_key)
 
     def test_build_without_awareness(self):
-        from prompt_fence import PromptBuilder, generate_keypair, get_awareness_instructions, set_awareness_instructions
+        from prompt_fence import (
+            PromptBuilder,
+            generate_keypair,
+            get_awareness_instructions,
+            set_awareness_instructions,
+        )
 
         private_key, _ = generate_keypair()
-        
+
         original = get_awareness_instructions()
         try:
             set_awareness_instructions("")
-            prompt = (
-                PromptBuilder().trusted_instructions("Test").build(private_key)
-            )
+            prompt = PromptBuilder().trusted_instructions("Test").build(private_key)
 
             prompt_str = prompt.to_plain_string()
             assert "CRITICAL SECURITY RULES" not in prompt_str
@@ -186,11 +189,7 @@ class TestValidation:
 
         private_key, public_key = generate_keypair()
 
-        prompt = (
-            PromptBuilder()
-            .trusted_instructions("Original instruction")
-            .build(private_key)
-        )
+        prompt = PromptBuilder().trusted_instructions("Original instruction").build(private_key)
 
         # Tamper with the prompt
         tampered = prompt.to_plain_string().replace("Original", "Malicious")
@@ -216,11 +215,7 @@ class TestXMLEscaping:
 
         special_content = 'Test with <script>alert("xss")</script> & "quotes"'
 
-        prompt = (
-            PromptBuilder()
-            .untrusted_content(special_content)
-            .build(private_key)
-        )
+        prompt = PromptBuilder().untrusted_content(special_content).build(private_key)
 
         prompt_str = prompt.to_plain_string()
 

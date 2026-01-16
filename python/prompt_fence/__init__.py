@@ -54,7 +54,7 @@ except ImportError:
     def get_awareness_instructions() -> str:
         raise ImportError("Rust core not available")
 
-    def set_awareness_instructions(instructions: str) -> None:
+    def set_awareness_instructions(_instructions: str) -> None:
         raise ImportError("Rust core not available")
 
 
@@ -105,9 +105,7 @@ def generate_keypair() -> tuple[str, str]:
         ) from None
 
 
-def validate(
-    prompt: str | FencedPrompt, public_key: str | None = None
-) -> bool:
+def validate(prompt: str | FencedPrompt, public_key: str | None = None) -> bool:
     """Validate all fences in a prompt string.
 
     This is the security gateway function that verifies cryptographic
@@ -141,10 +139,11 @@ def validate(
             )
 
         # Handle FencedPrompt objects automatically
-        if hasattr(prompt, "to_plain_string"):
-            prompt_str = prompt.to_plain_string()
-        else:
-            prompt_str = str(prompt)
+        prompt_str = (
+            prompt.to_plain_string()
+            if hasattr(prompt, "to_plain_string")
+            else str(prompt)
+        )
 
         result: bool = verify_all_fences(prompt_str, public_key)
         return result
@@ -154,9 +153,7 @@ def validate(
         ) from None
 
 
-def validate_fence(
-    fence_xml: str, public_key: str | None = None
-) -> VerificationResult:
+def validate_fence(fence_xml: str, public_key: str | None = None) -> VerificationResult:
     """Validate a single fence XML and extract its contents.
 
     Args:
@@ -180,9 +177,7 @@ def validate_fence(
             public_key = os.environ.get("PROMPT_FENCE_PUBLIC_KEY")
 
         if public_key is None:
-            raise ValueError(
-                "Public key must be provided or set in PROMPT_FENCE_PUBLIC_KEY"
-            )
+            raise ValueError("Public key must be provided or set in PROMPT_FENCE_PUBLIC_KEY")
 
         valid, content, fence_type, rating, source, timestamp = verify_fence(fence_xml, public_key)
 

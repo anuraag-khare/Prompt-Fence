@@ -1,11 +1,11 @@
 """Tests for prompt_fence builder."""
 
+from prompt_fence import get_awareness_instructions
 from prompt_fence.builder import (
     FencedPrompt,
     PromptBuilder,
     _iso_timestamp,
 )
-from prompt_fence import get_awareness_instructions
 from prompt_fence.types import FenceRating, FenceSegment, FenceType
 
 

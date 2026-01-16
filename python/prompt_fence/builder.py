@@ -45,20 +45,12 @@ class FencedPrompt:
     @property
     def trusted_segments(self) -> list[FenceSegment]:
         """Get all trusted fence segments."""
-        return [
-            s
-            for s in self._segments
-            if s.rating == FenceRating.TRUSTED
-        ]
+        return [s for s in self._segments if s.rating == FenceRating.TRUSTED]
 
     @property
     def untrusted_segments(self) -> list[FenceSegment]:
         """Get all untrusted fence segments."""
-        return [
-            s
-            for s in self._segments
-            if s.rating == FenceRating.UNTRUSTED
-        ]
+        return [s for s in self._segments if s.rating == FenceRating.UNTRUSTED]
 
     @property
     def has_awareness_instructions(self) -> bool:
@@ -330,8 +322,10 @@ class PromptBuilder:
         # Import here to avoid circular dependency and allow graceful fallback
         try:
             from prompt_fence._core import (
-                sign_fence as _sign_fence,
                 get_awareness_instructions as _get_awareness,
+            )
+            from prompt_fence._core import (
+                sign_fence as _sign_fence,
             )
         except ImportError:
             # Fallback for development/testing without compiled Rust
@@ -343,9 +337,7 @@ class PromptBuilder:
             private_key = os.environ.get("PROMPT_FENCE_PRIVATE_KEY")
 
         if private_key is None:
-            raise ValueError(
-                "Private key must be provided or set in PROMPT_FENCE_PRIVATE_KEY"
-            )
+            raise ValueError("Private key must be provided or set in PROMPT_FENCE_PRIVATE_KEY")
 
         signed_segments: list[FenceSegment] = []
 
