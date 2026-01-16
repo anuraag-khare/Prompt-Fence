@@ -81,7 +81,7 @@ def generate_keypair() -> tuple[str, str]:
         ) from None
 
 
-def validate(prompt: str, public_key: str) -> bool:
+def validate(prompt: str | FencedPrompt, public_key: str) -> bool:
     """Validate all fences in a prompt string.
 
     This is the security gateway function that verifies cryptographic
@@ -89,7 +89,7 @@ def validate(prompt: str, public_key: str) -> bool:
     "If any fence fails verification, the entire prompt is rejected."
 
     Args:
-        prompt: The complete fenced prompt string.
+        prompt: The complete fenced prompt string or FencedPrompt object.
         public_key: Base64-encoded Ed25519 public key.
 
     Returns:
@@ -105,7 +105,13 @@ def validate(prompt: str, public_key: str) -> bool:
     try:
         from prompt_fence._core import verify_all_fences
 
-        result: bool = verify_all_fences(prompt, public_key)
+        # Handle FencedPrompt objects automatically
+        if hasattr(prompt, "to_plain_string"):
+            prompt_str = prompt.to_plain_string()
+        else:
+            prompt_str = str(prompt)
+
+        result: bool = verify_all_fences(prompt_str, public_key)
         return result
     except ImportError:
         raise ImportError(
