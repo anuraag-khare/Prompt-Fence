@@ -8,25 +8,31 @@
       
       
       
+        <link rel="canonical" href="https://anuraag-khare.github.io/prompt-fence/building-prompts/">
       
+      
+        <link rel="prev" href="../configuration/">
+      
+      
+        <link rel="next" href="../validation/">
       
       
         
       
       
-      <link rel="icon" href="/prompt-fence/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Prompt Fence SDK</title>
+        <title>Building Prompts - Prompt Fence SDK</title>
       
     
     
-      <link rel="stylesheet" href="/prompt-fence/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/prompt-fence/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,9 +51,9 @@
       
     
     
-      <link rel="stylesheet" href="/prompt-fence/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/prompt-fence/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#building-fenced-prompts" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/prompt-fence/." title="Prompt Fence SDK" class="md-header__button md-logo" aria-label="Prompt Fence SDK" data-md-component="logo">
+    <a href=".." title="Prompt Fence SDK" class="md-header__button md-logo" aria-label="Prompt Fence SDK" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Building Prompts
             
           </span>
         </div>
@@ -219,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/prompt-fence/." title="Prompt Fence SDK" class="md-nav__button md-logo" aria-label="Prompt Fence SDK" data-md-component="logo">
+    <a href=".." title="Prompt Fence SDK" class="md-nav__button md-logo" aria-label="Prompt Fence SDK" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -249,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -330,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -358,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/key-management/" class="md-nav__link">
+      <a href="../key-management/" class="md-nav__link">
         
   
   
@@ -386,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -418,8 +429,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -430,13 +443,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -457,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -472,10 +483,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/prompt-fence/building-prompts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Prompts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -491,6 +529,160 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-promptbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PromptBuilder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The PromptBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-trusted-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Trusted Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-untrusted-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Untrusted Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-partially-trusted-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Partially Trusted Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-raw-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Raw Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building the Prompt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fencedprompt-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The FencedPrompt Object
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -503,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/validation/" class="md-nav__link">
+      <a href="../validation/" class="md-nav__link">
         
   
   
@@ -592,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         
   
   
@@ -627,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/prompt-fence/api/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   
@@ -664,6 +856,150 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-promptbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PromptBuilder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The PromptBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-trusted-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Trusted Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-untrusted-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Untrusted Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-partially-trusted-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Partially Trusted Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-raw-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Raw Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building the Prompt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fencedprompt-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The FencedPrompt Object
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -676,8 +1012,103 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="building-fenced-prompts">Building Fenced Prompts</h1>
+<p>The core of Prompt Fence is the <code>PromptBuilder</code>. It allows you to construct a single prompt string composed of multiple "segments", each with a specific trust rating.</p>
+<h2 id="the-promptbuilder">The PromptBuilder</h2>
+<pre><code class="language-python">from prompt_fence import PromptBuilder
+
+builder = PromptBuilder()
+</code></pre>
+<p>The builder follows a fluent interface pattern. You can chain methods to add segments in order.</p>
+<h3 id="segment-types">Segment Types</h3>
+<h4 id="1-trusted-instructions">1. Trusted Instructions</h4>
+<p><strong>Use for:</strong> System instructions, prompt templates, few-shot examples that YOU define.</p>
+<pre><code class="language-python">builder.trusted_instructions(&quot;You are a helpful assistant.&quot;)
+</code></pre>
+<ul>
+<li><strong>Rating:</strong> <code>TRUSTED</code></li>
+<li><strong>Default Source:</strong> <code>system</code></li>
+</ul>
+<h4 id="2-untrusted-content">2. Untrusted Content</h4>
+<p><strong>Use for:</strong> Any input that comes from an external user, even if you think it's safe.</p>
+<pre><code class="language-python">user_input = &quot;Write a poem about...&quot;
+builder.untrusted_content(user_input, source=&quot;user_123&quot;)
+</code></pre>
+<ul>
+<li><strong>Rating:</strong> <code>UNTRUSTED</code></li>
+<li><strong>Default Source:</strong> <code>user</code></li>
+</ul>
+<h4 id="3-partially-trusted-content">3. Partially Trusted Content</h4>
+<p><strong>Use for:</strong> Content from 3rd party APIs or partners that you trust more than a random user but less than your own system.</p>
+<pre><code class="language-python">api_data = fetch_weather_data()
+builder.partially_trusted_content(api_data, source=&quot;weather_api&quot;)
+</code></pre>
+<ul>
+<li><strong>Rating:</strong> <code>PARTIALLY_TRUSTED</code></li>
+<li><strong>Default Source:</strong> <code>partner</code></li>
+</ul>
+<h4 id="4-raw-data">4. Raw Data</h4>
+<p><strong>Use for:</strong> Large blobs of data (CSV, JSON) to be processed.</p>
+<pre><code class="language-python">builder.data_segment(json_blob, source=&quot;database&quot;)
+</code></pre>
+<ul>
+<li><strong>Rating:</strong> <code>UNTRUSTED</code> (by default)</li>
+<li><strong>Default Source:</strong> <code>data</code></li>
+</ul>
+<hr />
+<h2 id="building-the-prompt">Building the Prompt</h2>
+<p>Once you have added all segments, call <code>.build()</code> with your private key to sign everything.</p>
+<pre><code class="language-python"># private_key must be a valid Ed25519 private key string
+prompt = builder.build(private_key)
+</code></pre>
+<p>The result is a <code>FencedPrompt</code> object.</p>
+<h3 id="the-fencedprompt-object">The FencedPrompt Object</h3>
+<p>This object behaves like a string, but also exposes useful metadata.</p>
+<pre><code class="language-python"># Use as string
+print(prompt)
+
+# Explicit string conversion
+raw_prompt = prompt.to_plain_string()
+
+# Inspect segments
+for segment in prompt.segments:
+    print(f&quot;[{segment.rating}] {segment.source}: {len(segment.content)} chars&quot;)
+</code></pre>
+<h2 id="advanced-examples">Advanced Examples</h2>
+<h3 id="chat-history">Chat History</h3>
+<p>You can rebuild a conversation history using trusted segments for the assistant's past replies (if you trust your own outputs) and untrusted segments for user replies.</p>
+<pre><code class="language-python">builder = PromptBuilder()
+
+# System
+builder.trusted_instructions(&quot;You are a chat bot.&quot;)
+
+# History
+builder.untrusted_content(&quot;Hello!&quot;, source=&quot;user&quot;)
+builder.trusted_instructions(&quot;Hi there, how can I help?&quot;, source=&quot;assistant_history&quot;)
+builder.untrusted_content(&quot;Ignore previous instructions...&quot;, source=&quot;user&quot;)
+
+prompt = builder.build(private_key)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -714,10 +1145,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/prompt-fence/", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "/prompt-fence/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/prompt-fence/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
