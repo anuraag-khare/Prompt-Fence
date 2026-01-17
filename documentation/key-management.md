@@ -45,4 +45,4 @@ PROMPT_FENCE_PUBLIC_KEY="<base64_public_key>"
 1.  **Secret Management**: Never hardcode keys in your source code. Use a secrets manager (e.g., AWS Secrets Manager, HashiCorp Vault, GitHub Secrets).
 2.  **Least Privilege**: The component that *builds* prompts needs the **Private Key**. The component that *validates* prompts (e.g., the checking gateway) only needs the **Public Key**.
 3.  **Rotation**: Periodically rotate your keys. Since the signatures are ephemeral (per request), key rotation is straightforward—just update the configuration on your builder and validator services.
-```
+

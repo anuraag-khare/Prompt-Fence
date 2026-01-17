@@ -9,6 +9,8 @@
 
 A Python SDK for establishing cryptographic security boundaries in LLM prompts, based on the [Prompt Fence paper](https://arxiv.org/abs/2511.19727).
 
+**Documentation**: [https://anuraag-khare.github.io/prompt-fence/](https://anuraag-khare.github.io/prompt-fence/)
+
 ## Overview
 
 Prompt Fence provides cryptographically signed segments within LLM prompts to:
@@ -224,7 +226,7 @@ set_awareness_instructions("")
 ```python
 builder.trusted_instructions(
     "Instructions...",
-    timestamp="2025-01-15T10:00:00.000Z"
+    timestamp="2025-12-15T10:00:00.000Z"
 )
 ```
 
@@ -251,18 +253,6 @@ uv run ruff format prompt_fence/ tests/  # Format
 uv run mypy prompt_fence/                # Type check
 ```
 
-## Publishing to PyPI
-
-```bash
-# Build release wheels
-maturin build --release
-
-# Publish to PyPI (requires PyPI credentials)
-maturin publish
-
-# Or publish to TestPyPI first
-maturin publish --repository testpypi
-```
 
 ## License
 

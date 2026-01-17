@@ -41,9 +41,8 @@ class TestKeyGeneration:
 
 class TestSignAndVerify:
     def test_sign_and_verify_fence(self):
-        from prompt_fence._core import FenceRating, FenceType, sign_fence
-
         from prompt_fence import generate_keypair, validate_fence
+        from prompt_fence._core import FenceRating, FenceType, sign_fence
 
         private_key, public_key = generate_keypair()
 
@@ -64,9 +63,8 @@ class TestSignAndVerify:
         assert result.rating.value == "trusted"
 
     def test_tampered_content_fails_verification(self):
-        from prompt_fence._core import FenceRating, FenceType, sign_fence
-
         from prompt_fence import generate_keypair, validate_fence
+        from prompt_fence._core import FenceRating, FenceType, sign_fence
 
         private_key, public_key = generate_keypair()
 
@@ -87,9 +85,8 @@ class TestSignAndVerify:
         assert not result.valid
 
     def test_wrong_key_fails_verification(self):
-        from prompt_fence._core import FenceRating, FenceType, sign_fence
-
         from prompt_fence import generate_keypair, validate_fence
+        from prompt_fence._core import FenceRating, FenceType, sign_fence
 
         private_key1, public_key1 = generate_keypair()
         _, public_key2 = generate_keypair()  # Different keypair

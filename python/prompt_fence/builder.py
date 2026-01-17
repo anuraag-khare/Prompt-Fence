@@ -17,9 +17,11 @@ class FencedPrompt:
     - Access to individual segments for inspection
 
     Example:
-        >>> prompt = builder.build(private_key)
-        >>> print(prompt)  # Uses __str__, includes fence-aware instructions
-        >>> llm_call(prompt.to_plain_string())  # Explicit str for other SDKs
+        ```python
+        prompt = builder.build(private_key)
+        print(prompt)  # Uses __str__, includes fence-aware instructions
+        llm_call(prompt.to_plain_string())  # Explicit str for other SDKs
+        ```
     """
 
     def __init__(
@@ -127,19 +129,21 @@ class PromptBuilder:
     explicit trust boundaries.
 
     Example:
-        >>> from prompt_fence import PromptBuilder, generate_keypair
-        >>>
-        >>> private_key, public_key = generate_keypair()
-        >>>
-        >>> prompt = (
-        ...     PromptBuilder()
-        ...     .trusted_instructions("Analyze the following review...")
-        ...     .untrusted_content("User review text here...")
-        ...     .build(private_key)
-        ... )
-        >>>
-        >>> # Use with any LLM SDK
-        >>> response = llm.generate(prompt.to_plain_string())
+        ```python
+        from prompt_fence import PromptBuilder, generate_keypair
+
+        private_key, public_key = generate_keypair()
+
+        prompt = (
+            PromptBuilder()
+            .trusted_instructions("Analyze the following review...")
+            .untrusted_content("User review text here...")
+            .build(private_key)
+        )
+
+        # Use with any LLM SDK
+        response = llm.generate(prompt.to_plain_string())
+        ```
     """
 
     def __init__(self):
