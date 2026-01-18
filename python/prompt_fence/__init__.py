@@ -60,7 +60,7 @@ except ImportError:
         raise ImportError("Rust core not available")
 
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __all__ = [
     # Types
     "FenceType",
